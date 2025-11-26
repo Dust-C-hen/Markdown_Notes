@@ -158,14 +158,21 @@ github渲染想让图表居中比较麻烦，此处省略。
 
 ## 数学公式 (LaTeX)
 Markdown 完美支持 LaTeX 数学公式，适合理工科笔记。
+
 行内公式：质能方程是 $E = mc^2$。
+
 独立公式块(github里必须严格按照下述写法换行)：
+
 $$
+
 \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+
 $$
 
 麦克斯韦方程组 (微分形式)：
+
 $$
+
 \begin{cases}
 \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0} \\
 \nabla \cdot \mathbf{B} = 0 \\
@@ -176,6 +183,7 @@ $$
 4 & 5 & 6 \\
 7 & 8 & 9
 \end{bmatrix}
+
 $$
 
 ---
