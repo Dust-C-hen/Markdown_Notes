@@ -159,42 +159,59 @@ github渲染想让图表居中比较麻烦，此处省略。
 ## 数学公式 (LaTeX)
 Markdown 完美支持 LaTeX 数学公式，适合理工科笔记。
 
+GitHub 要求 $ 符号内部紧贴内容，不能有空格。
+
 行内公式：质能方程是 $E = mc^2$。
 
-独立公式块(github里必须严格按照下述写法换行)：
+独立公式块(github里必须严格按照下述写法换行，空两行)
+
+换行符陷阱：`\\` 实际上是 `\\\\`
+在某些复杂的 Markdown 环境中（尤其是在表格里，或者特定的列表嵌套里），GitHub 会把 LaTeX 的换行符 `\\` 当作转义字符吃掉。
+
 
 $$
-
 \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
-
 $$
+
 
 麦克斯韦方程组 (微分形式)：
 
+
+$$
+\begin{cases}
+\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0} \\\\
+\nabla \cdot \mathbf{B} = 0 \\\\
+\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} \\\\
+\nabla \times \mathbf{B} = \mu_0\mathbf{J} + \mu_0\varepsilon_0\frac{\partial \mathbf{E}}{\partial t}
+\end{cases}
 $$
 
-\begin{cases}
-\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \mathbf{B} = 0 \\
-\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} \\
-\nabla \times \mathbf{B} = \mu_0\mathbf{J} + \mu_0\varepsilon_0\frac{\partial \mathbf{E}}{\partial t}
-\end{cases}$$矩阵示例：$$A = \begin{bmatrix}
-1 & 2 & 3 \\
-4 & 5 & 6 \\
+
+矩阵示例：
+
+
+$$
+A = \begin{bmatrix}
+1 & 2 & 3 \\\\
+4 & 5 & 6 \\\\
 7 & 8 & 9
 \end{bmatrix}
-
 $$
+
 
 ---
 
 ## 链接与多媒体 (Links & Media)
 ### 基本链接
+
 Markdown中，链接的基本格式为：`[链接文本](链接地址 "可选标题")`
+
 [百度](https://www.baidu.com "百度一下，你就知道")
 
 ### 自动识别URL
+
 直接输入URL或用尖括号包裹，Markdown会自动将其转换为超链接。
+
 <www.google.com>
 
 ### 锚点链接
@@ -202,27 +219,35 @@ Markdown中，链接的基本格式为：`[链接文本](链接地址 "可选标
 用于文档内跳转：
 
 [跳转到标题](#表格)
+
 [跳转到本文开头](#title-markdown-常用语法综合指南)
 
 ### 邮件链接
 
 Markdown支持创建邮件超链接：
+
 [发送邮件](mailto:example@email.com)
 
 ---
 
 ## 高级图表 (Mermaid)
+
 需要 Markdown Preview Enhanced 插件支持，github端暂时不支持，此处略去。
 
 ---
 
 ## 提示块与折叠 (HTML Tricks)
+
 引用提示：
+
 注意： 这里的配置对 Windows 和 Mac 都通用。
+
 支持嵌套引用。
+
 折叠详情 (适合做答案解析):
 
 <details> <summary><b>点击查看 C++ 虚析构函数的作用</b></summary>
+
 当通过基类指针删除派生类对象时，如果基类析构函数不是虚函数，则不会调用派生类的析构函数，可能导致内存泄漏。 </details>
 
 ---
@@ -244,9 +269,11 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 ## 图片
 可以直接复制图片，然后粘贴在这里
+
 ![alt text](image.png)
 
 这种方法会根据页面大小自动调整图片排列，并设置图片居中和大小
+
 <p align = "center">    
 <img  src="image.png" width="400" />
 <img  src="image.png" width="400" />
