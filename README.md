@@ -4,4 +4,8 @@
 
 This is a simple utilization of Markdown.
 
-[示例文件(Example)](./Markdown_basic.md)
+[示例1 本地美化版](./Markdown_basic.md)
+
+github暂时不支持一些语法，会造成渲染异常，兼容版本见下方文件：
+
+[示例2 github兼容版](./Markdown_basic_github_version.md)
